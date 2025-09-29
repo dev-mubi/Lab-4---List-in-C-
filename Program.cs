@@ -1,11 +1,15 @@
-﻿using System.Collections;
-
+﻿using System.Collections.Generic;
+using System.Collections;
 namespace Lab_4 // 29 Sept 2025
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+
+
+
+
             // Name Space in C#
             // List
             List<int> nums = new List<int>() { 4, 5, 3, 5 }; //initialization
@@ -144,7 +148,18 @@ namespace Lab_4 // 29 Sept 2025
             // boxing is normally implicit.
             // UPCASTING OR DOWNCASTING???? --> Hashtable uses this technique to match key and value.
 
+            //Task
+            Dictionary<string, List<string>> pc = new Dictionary<string, List<string>>();
 
+            pc.Add("Punjab", new List<string> { "Mianwali", "Faislabad" });
+            pc.Add("Sindh", ["Karachi", "Sukr"]);
+            pc.Add("KPK", ["Abbotabad", "Peshawar"]); // both methods are valid.
+            pc.Add("Balochistan", ["Quetta", "Sui"]);
+
+            foreach (KeyValuePair<string, List<string>> p in pc)
+            {
+                Console.WriteLine("[" + p.Key + " : " + p.Value[0] + ", " + p.Value[1] + "]");
+            }
 
 
         }

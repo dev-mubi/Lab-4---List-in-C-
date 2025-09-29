@@ -1,4 +1,6 @@
-﻿namespace Lab_4 // 29 Sept 2025
+﻿using System.Collections;
+
+namespace Lab_4 // 29 Sept 2025
 {
     internal class Program
     {
@@ -24,7 +26,7 @@
             Console.WriteLine(String.Join(",", nums)); // Convert to string using , as delimeter.
             // or use loop
             Console.WriteLine("Printing using loop: ");
-            foreach(int x in nums)
+            foreach (int x in nums)
             {
                 Console.WriteLine(x);
             }
@@ -62,7 +64,7 @@
             Console.WriteLine(nums.IndexOf(7));
             //use nums.find to add condition... like value over 10... returns first occurance. findAll will return all values meeting condition.
 
-            Console.WriteLine(nums.Find(x => x>10)); //returns 0 if no element meets condition.
+            Console.WriteLine(nums.Find(x => x > 10)); //returns 0 if no element meets condition.
             nums.RemoveAll(x => x > 4);
             Console.WriteLine("After Remove all > 4: ");
             Console.WriteLine(String.Join(",", nums));
@@ -88,8 +90,8 @@
             //Dictionary --> grneric type
             // is a collection to store key-value pairs.
 
-           // Dictionary<Tkey, Tvalue> xyz = new Dictionary<Tkey, Tvalue>();
-           //keys have to be unique and not null. values can be duplicate and null.
+            // Dictionary<Tkey, Tvalue> xyz = new Dictionary<Tkey, Tvalue>();
+            //keys have to be unique and not null. values can be duplicate and null.
 
             // implements IDictionary<Tkey,Tvalue> interface
 
@@ -111,12 +113,38 @@
             // If key is not present then add new record.
 
             // Access loop
-            foreach(KeyValuePair<string,int> st in students)
+            foreach (KeyValuePair<string, int> st in students)
             {
                 // st.key and st.value are READ ONLY props. Cannot update record just access.
                 //Console.WriteLine(st.Key + " : " + st.Value ); // just st prints pair itself
                 Console.WriteLine(st);
             }
+
+
+            // HashTable in C#
+            // Non Generic --> System.Collection is its nameSpace.
+
+            Hashtable myname = new Hashtable(); // will have unique key. Also uses Pair.
+            // Pairs can be of different types unlike dict.
+
+            myname.Add(2.1, 800);
+            myname.Add("Areeba", 100);
+            myname.Add(2, 6.40);
+
+            // Accessing
+            Console.WriteLine("Printing HashTable");
+            foreach (DictionaryEntry x in myname)
+            {
+                Console.WriteLine(x);
+
+            }
+            // Process of boxing and unboxing.....
+            // Ref --> Value type === unboxing and vice versa.
+
+            // boxing is normally implicit.
+            // UPCASTING OR DOWNCASTING???? --> Hashtable uses this technique to match key and value.
+
+
 
 
         }

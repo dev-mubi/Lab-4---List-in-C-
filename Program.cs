@@ -82,7 +82,60 @@
             nums.Clear();
             Console.WriteLine("Size of list: " + nums.Count);
 
+            //passing to function
+            display(nums);
+
+            //Dictionary --> grneric type
+            // is a collection to store key-value pairs.
+
+           // Dictionary<Tkey, Tvalue> xyz = new Dictionary<Tkey, Tvalue>();
+           //keys have to be unique and not null. values can be duplicate and null.
+
+            // implements IDictionary<Tkey,Tvalue> interface
+
+            // value can be accessed --> xyz[key] --> using keys
+            // indivisual pair are stored as KEY VALUE PAIR --> KVP<Tkey,Tvalue>
+
+            // .key and .value
+
+            Dictionary<string, int> students = new Dictionary<string, int>();
+            // adding records.
+            // add or INDEXER --> two methods
+            students.Add("Fariha", 300);
+            students.Add("Shahzaib", 900);
+            students.Add("Laiba", 600);
+            //  students.Add("Shahzaib", 900); -->ERROR ... duplicate key
+            //But indexer will modify the record with that key.
+
+            students["Shahzaib"] = 1200; // Modification
+            // If key is not present then add new record.
+
+            // Access loop
+            foreach(KeyValuePair<string,int> st in students)
+            {
+                // st.key and st.value are READ ONLY props. Cannot update record just access.
+                //Console.WriteLine(st.Key + " : " + st.Value ); // just st prints pair itself
+                Console.WriteLine(st);
+            }
+
+
         }
 
+
+
+
+
+
+
+
+
+
+
+
+        static void display(List<int> nums)        // Pass by reference
+
+        {
+            Console.WriteLine("Use me to print list but make sure to pass one");
+        }
     }
 }
